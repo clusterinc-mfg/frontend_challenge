@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
-
-import { useLazyQuery, useQuery } from '@apollo/react-hooks';
+import React from 'react';
 
 import BottomBar from '../../components/BottomBar/BottomBar';
 import FilterMenu from '../../components/FilterMenu/FilterMenu';
@@ -13,6 +10,8 @@ import { ProgramContainer, ResultsHeader } from './HomePage.styles';
 
 //TODO: Build the home page
 /*
+  add appropriate types
+
   renderProgramContainer:  
     *   Finish the function renderHeader.  If a search term is present, it should return
         "129 Items For Engineering!" where 129 is the number of items and engineering is the search term.
@@ -30,7 +29,7 @@ import { ProgramContainer, ResultsHeader } from './HomePage.styles';
 
     *  Pull the term and filter from the redux store
 
-    *  Create a piece of state for the page vairable
+    *  Create a piece of state called page
 
     *  Inside of the layout component render the FilterMenu, ProgramContainer, and BottomBar
 
@@ -41,16 +40,14 @@ import { ProgramContainer, ResultsHeader } from './HomePage.styles';
 const renderProgramContainer = (programs, count, term = null) => {
   const renderPrograms = programs =>
     programs.map((program, i) => (
-      <ProgramRow key={program.id + program.name + i} program={program} />
+      <ProgramRow key={program.id + program.name} program={program} />
     ));
 
   // write the renderHeader function
-  const renderHeader = (count, term) =>
-    term ? `${count} items found for ${term}!` : `${count} items found!`;
 
   return (
     <ProgramContainer>
-      <ResultsHeader>{renderHeader(count, term)}</ResultsHeader>
+      {/* render the header inside of the ResultsHeader component */}
       {/* Render the list of programs here using a function called renderPrograms */}
       {renderPrograms(programs)}
     </ProgramContainer>
@@ -58,45 +55,26 @@ const renderProgramContainer = (programs, count, term = null) => {
 };
 
 const HomePage = () => {
-  let count = 0;
-  let programs = [];
+
   const itemsPerPage = 10;
 
-  const [page, setPage] = useState(1);
-
   // Pull the term and filter from the redux store
-  const term = useSelector((state: any) => state.term, shallowEqual);
-  const filter = useSelector((state: any) => state.filter, shallowEqual);
 
-  let variables = {
-    data: {
-      offset: (page - 1) * itemsPerPage,
-      limit: itemsPerPage,
-      term,
-      filter,
-    },
-  };
 
   // Use the PROGRAM_SEARCH QUERY to get the count and programs list
   // supply that query with the offest, limit, term, and filter options
-  const { loading, data } = useQuery(PROGRAM_SEARCH, { variables });
 
-  if (!loading) {
-    count = data.programSearch.count;
-    programs = data.programSearch.programs;
-  }
 
   return (
     <Layout>
-      <FilterMenu /> 
+
 {/* Filter Menu goes here */}
-      {loading ? <Spinner /> : renderProgramContainer(programs, count, term)}
 {/* Spinner or programs container */}
 {/* Bottom Bar */}
       <BottomBar
-        count={count}
-        page={page}
-        setPage={setPage}
+        count={}    //put the count data here
+        page={}     //put the current page here
+        setPage={}  //put a function to set the page here
         itemsPerPage={itemsPerPage}
       />
     </Layout>

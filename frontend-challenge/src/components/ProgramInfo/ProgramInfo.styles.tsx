@@ -13,6 +13,7 @@ import styled from 'styled-components'
         * should have a .5rem radius on the corners
         * should have a shadow on the outside of 1px 1px 2px 2px with a color of #ddd
         * should have a font color of #333
+        * vertical padding of 2rem and horizontal of .5rem
     
     DescHeader:
         * the text should be bold
@@ -23,7 +24,7 @@ import styled from 'styled-components'
             should be left aligned.
         
     Description:
-        * should have a bottom margin of .5rem
+        * should have a bottom margin of 1rem
         
     TuitionRow:
         * use flexbox
@@ -32,43 +33,30 @@ import styled from 'styled-components'
         * add 2 rem of padding left and right
 */
 
-interface DescHeaderProps {
-    center?: boolean
-}
 
 export const Wrapper = styled.div`
-    display: grid;
-    grid-column-gap: 1rem;
-    grid-template-columns: 1fr .5fr;
-    padding: 2rem 10rem;
+
 `
 
 export const Card = styled.div`
-    border-radius: .5rem;
-    box-shadow: 1px 1px 2px 2px #ddd;
-    color: #333;
-    padding: 2rem .5rem;
+
 `
 
 export const FieldWrapper = styled.div`
     
 `
 
+
 export const DescHeader = styled.h3`
-    font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: .5rem;
-    text-align: ${(props:DescHeaderProps)=> props.center ? "center" : "left"};
+
 `
 
 export const Description = styled.p`
-    margin-bottom: 1rem;
+
 `
 
 export const TuitionRow = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: .25rem 2rem;
+
 `
 
 export const TuitionLabel = styled.p`

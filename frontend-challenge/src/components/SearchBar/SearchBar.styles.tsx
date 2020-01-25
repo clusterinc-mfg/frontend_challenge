@@ -24,24 +24,7 @@ export const Container = styled.div`
     overflow: hidden;
 `
 
-export const Input = styled.input`
-    display: flex;
-    flex-grow: 1;
-    padding: .2rem 1rem;
-    color: #888;
-    font-weight: 800;
-    border: none;
-
-    &,
-    &:focus,
-    &:active {
-        outline: none;
-    }
-
-    &::placeholder{
-        color: #ddd;
-    }
-`
+//create Input
 
 export const SubmitButton = styled.button`
     height: auto;

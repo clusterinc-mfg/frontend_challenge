@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { Container, MenuItem, MenuContainer } from './FilterMenu.styles';
-
-import {useDispatch} from 'react-redux'
-import {updateFilter} from '../../redux/Filter/filter.actions'
-import {filterType} from '../../redux/types'
+import { Container, MenuContainer, MenuItem } from './FilterMenu.styles';
 
 //TODO: Finish the Filter Menu
 
@@ -16,16 +12,15 @@ import {filterType} from '../../redux/types'
 
 
 const FilterMenu = () => {
-  const dispatch = useDispatch()
 
   return(
     <Container>
     <MenuContainer>
-      Filter by: <MenuItem onClick={ ()=>{dispatch(updateFilter(filterType.certificate))} }>Certificate</MenuItem> |
-      <MenuItem onClick={ ()=>{dispatch(updateFilter(filterType.bachlores))} }>Bachlores</MenuItem> |
-      <MenuItem onClick={ ()=>{dispatch(updateFilter(filterType.masters))} }>Masters</MenuItem> |
-      <MenuItem onClick={ ()=>{dispatch(updateFilter(filterType.phd))} }>Ph.D.</MenuItem> |
-      <MenuItem onClick={ ()=>{dispatch(updateFilter(filterType.all))} }>All</MenuItem>
+      Filter by: <MenuItem  >Certificate</MenuItem> |
+      <MenuItem>Bachlores</MenuItem> |
+      <MenuItem>Masters</MenuItem> |
+      <MenuItem>Ph.D.</MenuItem> |
+      <MenuItem>All</MenuItem>
     </MenuContainer>
   </Container>
   )

@@ -1,15 +1,13 @@
-
 import {
-    Wrapper,
     Card,
-    FieldWrapper,
     DescHeader,
     Description,
-    TuitionRow,
+    FieldWrapper,
     TuitionLabel,
-    TuitionValue
+    TuitionRow,
+    TuitionValue,
+    Wrapper
 } from './ProgramInfo.styles'
-
 
 const ProgramInfo = ({programDescription, schoolDescription, schoolName, costPerCredit, requiredCredits}) => (
     <Wrapper>

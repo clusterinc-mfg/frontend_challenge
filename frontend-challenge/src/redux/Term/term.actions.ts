@@ -8,13 +8,3 @@
 
 
 
-export enum TermActionTypes {
-    updateTerm = "UPDATE_TERM"
-}
-
-export const updateTerm = (searchTerm:string) => {
-    return{
-        type: TermActionTypes.updateTerm,
-        payload: searchTerm
-    }
-}

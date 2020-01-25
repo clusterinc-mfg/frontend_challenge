@@ -6,13 +6,3 @@
     * Create an action creator called updateFilter that updates the filter state.
 */
 
-export enum FilterActionTypes {
-    updateFilter = "UPDATE_FILTER"
-}
-
-export const updateFilter = (filter:string) => {
-    return{
-        type: FilterActionTypes.updateFilter,
-        payload: filter
-    }
-}

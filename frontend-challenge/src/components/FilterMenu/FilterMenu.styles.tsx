@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 //    TODO: Style the filter menu.
 /*
     Container:
@@ -18,11 +17,7 @@ import styled from 'styled-components'
 
 
 export const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffefde;
-    padding: .5rem 5rem;
+
 `
 
 export const MenuContainer = styled.div`
@@ -30,11 +25,5 @@ export const MenuContainer = styled.div`
 `
 
 export const MenuItem = styled.span`
-    padding: 0 .5rem;
 
-    &:hover{
-        font-weight: bold;
-        border-bottom: 2px solid #ffaa00;
-        cursor: pointer;
-    }
 `
