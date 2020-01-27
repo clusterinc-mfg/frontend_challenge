@@ -8,7 +8,7 @@ export enum department {
 
 export enum filterType {
     certificate = "Cer",
-    bachlores = "Bach",
+    bachelors = "Bach",
     masters = "Mas",
     phd = "Doc",
     all = ""

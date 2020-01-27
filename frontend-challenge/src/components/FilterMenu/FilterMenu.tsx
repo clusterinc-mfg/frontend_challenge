@@ -17,7 +17,7 @@ const FilterMenu = () => {
     <Container>
     <MenuContainer>
       Filter by: <MenuItem  >Certificate</MenuItem> |
-      <MenuItem>Bachlores</MenuItem> |
+      <MenuItem>Bachelors</MenuItem> |
       <MenuItem>Masters</MenuItem> |
       <MenuItem>Ph.D.</MenuItem> |
       <MenuItem>All</MenuItem>

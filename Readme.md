@@ -1,15 +1,27 @@
-Run the following commands
-npm run inst
-npm run start:api
-npm run start:web
+## Setup
+* Clone the github repo
+* Run: npm run inst
+* Run: npm run start:api
+* Run: npm run start:web
+* Install the visual studio code plugin Todo Tree
+    * This is there to help you identify the action items
 
-The dev environment should start on localhost:3000
-The api server is live with a graphql playground running on localhost:4000/gql
+## Notes:
+* Frontend is written using NextJS
+* API is written using GraphQL-Yoga
+* User interface is styled using styled-components
 
-The code for this app has been written but, parts of it have been stripped away.
-Go though the components and implment the features specified in the comments.
-Add typescript interfaces to each of the react components.
-Style everything with styled components.
+## Functional Requirements
+* Page design should match the attached design (no need to suppoort responsiveness)
+* Programs listing should be loaded from api.
+* Users should be able to search for the programs, sort and paginate them.
 
-Most items should be labled with a TODO tag.
-The VSCode Todo Tree plugin should help you locate most of the items.
+
+## Technical requirements
+* Code should be written with TypeScript
+
+# Home Page
+![Home Page](./front_page.png)
+
+# Detail Page
+![Home Page](./detail_page.png)
